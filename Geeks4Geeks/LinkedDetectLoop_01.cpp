@@ -21,8 +21,12 @@ void createNode(Node** head,int data){
 bool detectLoop(Node* head){
   unordered_set<Node*> s;
   while(head!=NULL){
-     if(s.find(head)!=s.end())
-        return true;
+     if(s.find(head)!=s.end()){
+
+//         cout<<endl<<i;
+         return true;
+       }
+    //   i+=1;
      s.insert(head);
      head=head->next;
   }
@@ -48,7 +52,7 @@ createNode(&head,data);
 }
 pirntList(&head);
 
- // head->next->next->next=head;   To allow Loop exist
+ head->next->next->next=head;   To allow Loop exist
 
 
 detectLoop(head) ? cout<<"Loop exist:"<<endl : cout<<"Not exist: ";   
